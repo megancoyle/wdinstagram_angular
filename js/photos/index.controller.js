@@ -1,7 +1,8 @@
 "use strict";
 
 (function(){
-  angular.module("photos")
+  angular
+  .module("photos")
   .controller("WdinstagramIndexController", [
     WdinstagramIndexControllerFunction
   ]);
@@ -18,4 +19,4 @@
     }
   }
 
-})
+}());
