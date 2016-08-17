@@ -3,27 +3,28 @@
 (function(){
   angular
     .module("wdinstagram", [
-      "ui.router"
+      "ui.router",
+      "ngResource"
     ])
     .config([
       "$stateProvider",
-      RouterFunc
+      RouterFunction
     ])
 
-    function RouterFunc($stateProvider) {
-      $stateProvider
-        .state("photoIndex", {
-          url: "/entries",
-          templateUrl: "js/photos/index.html",
-          controller: "PhotoIndexController",
-          controllerAs: "indexViewModel"
-        })
-        .state("photoShow", {
-          url: "photos/:id",
-          templateUrl: "js/photos/show.html",
-          controller: "PhotoShowController",
-          controllerAs: "showViewModel"
-        })
-    }
+  function RouterFunction($stateProvider) {
+    $stateProvider
+      .state("entriesIndex", {
+        url: "/entries",
+        templateUrl: "js/photos/index.html",
+        controller: "EntryIndexController",
+        controllerAs: "indexViewModel"
+      })
+      .state("entryShow", {
+        url: "entries/:id",
+        templateUrl: "js/photos/show.html",
+        controller: "EntryShowController",
+        controllerAs: "showVm"
+      })
+  }
 
 })();

@@ -3,18 +3,24 @@
 (function(){
   angular
     .module("wdinstagram")
-    .controller("PhotoShowController", PhotoShowControllerFunction)
+    .controller("EntryShowController", EntryShowControllerFunction)
 
-  function PhotoShowControllerFunction($stateParams) {
+  EntryShowControllerFunction.$inject = ["$stateParams", "$state", "EntryFactory"]
+  function EntryShowControllerFunction($stateParams, $state, EntryFactory) {
     var showViewModel = this;
-    showViewModel.photo = photos[$stateParams.id]
+    showViewModel.entry = EntryFactory.get({id: $stateParams.id});
 
     showViewModel.update = function() {
-      photos[$stateParams.id] = showViewModel.photo;
-    };
+      showViewModel.entry.$update({id: $stateParams.id}).then(function() {
+        $state.go("entriesIndex");
+      });
+    }
 
     showViewModel.delete = function() {
-      photos.splice( $stateParams.id, 1 );
+      showViewModel.entry.$delete({id: $stateParams.id}).then(function() {
+        $state.go("entriesIndex");
+      });
+
     }
   }
 

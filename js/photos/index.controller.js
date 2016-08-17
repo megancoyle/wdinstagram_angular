@@ -3,16 +3,19 @@
 (function(){
   angular
     .module("wdinstagram")
-    .controller("PhotoIndexController", PhotoIndexControllerFunction)
+    .controller("EntryIndexController", EntryIndexControllerFunction)
 
-  function PhotoIndexControllerFunction() {
+  EntryIndexControllerFunction.$inject = ["EntryFactory"]
+  function EntryIndexControllerFunction(EntryFactory) {
     var indexViewModel = this;
-    indexViewModel.photos = photos;
-    indexViewModel.newPhoto = {};
+    indexViewModel.entries = EntryFactory.query();
+    indexViewModel.newEntry = new EntryFactory();
 
     indexViewModel.create = function() {
-      photos.push(indexViewModel.newPhoto);
-      indexViewModel.newPhoto = {};
+      indexViewModel.newEntry.$save().then(function(res) {
+        indexViewModel.entries.push(res);
+        indexViewModel.newEntry = new EntryFactory();
+      })
     }
   }
 

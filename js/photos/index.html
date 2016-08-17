@@ -1,16 +1,18 @@
-<h2>Photos</h2>
+<h2>Photos n' Stuff</h2>
 <p>
-  <form data-ng-submit="indexViewModel.create()">
-    <input placeholder="Author" data-ng-model="indexViewModel.newPhoto.author" />
-    <input placeholder="Body" data-ng-model="indexViewModel.newPhoto.body" />
-    <input placeholder="Photo Url" data-ng-model="indexViewModel.newPhoto.photo_url" />
-    <button type="submit">Create</button>
-  </form>
+<form data-ng-submit="indexViewModel.create()">
+  <input placeholder="Author" data-ng-model="indexViewModel.newEntry.author" />
+  <input placeholder="Body" data-ng-model="indexViewModel.newEntry.body" />
+  <input placeholder="Photo Url" data-ng-model="indexViewModel.newEntry.photo_url" />
+  <button type="submit">Create</button>
+</form>
 </p>
 
-<div data-ng-repeat="photo in indexViewModel.photos">
-  <a data-ui-sref="photoShow({id: photo.id})">
-    <img data-ng-src="{{photo.photo_url}}">
-    <p>{{photo.author}}</p></a>
-    <p>{{photo.body}}</p>
+<div data-ng-repeat="entry in indexViewModel.entries">
+  <a data-ui-sref="entryShow({id: entry.id})">
+
+    <img data-ng-src="{{entry.photo_url}}">
+    <p>{{entry.author}}</p>
+    <p>{{entry.body}}</p>
+  </a>
 </div>
