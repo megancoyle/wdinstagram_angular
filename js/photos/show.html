@@ -1,13 +1,11 @@
-<h2>Photo Page</h2>
-<img data-ng-src="{{showViewModel.photo.photo_url}}">
+<h2>{{showViewModel.photo.body}}</h2>
 <p>{{showViewModel.photo.author}}</p>
-<p>{{showViewModel.photo.body}}</p>
+<img data-ng-src="{{showViewModel.photo.photo_url}}">
 
-<!-- Edit/Delete  -->
 <form data-ng-submit="showViewModel.update()">
   <input data-ng-model="showViewModel.photo.author" />
   <input data-ng-model="showViewModel.photo.body" />
   <input data-ng-model="showViewModel.photo.photo_url" />
   <button type="submit">Update</button>
-  <button data-ui-sref="photosIndex" data-ng-click="showViewModel.delete()">Delete</button>
+  <button data-ui-sref="photoIndex" data-ng-click="showViewModel.delete()">Delete</button>
 </form>

@@ -9,7 +9,7 @@
 </p>
 
 <div data-ng-repeat="photo in indexViewModel.photos">
-  <a data-ui-sref="photoShow({id: $index})">
+  <a data-ui-sref="photoShow({id: photo.id})">
     <img data-ng-src="{{photo.photo_url}}">
     <p>{{photo.author}}</p>
     <p>{{photo.body}}</p>

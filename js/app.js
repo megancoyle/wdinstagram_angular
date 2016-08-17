@@ -12,16 +12,16 @@
 
     function RouterFunc($stateProvider) {
       $stateProvider
-        .state("photosIndex", {
+        .state("photoIndex", {
           url: "/entries",
           templateUrl: "js/photos/index.html",
-          controller: "PhotosIndexController",
+          controller: "PhotoIndexController",
           controllerAs: "indexViewModel"
         })
-        .state("entryShow", {
-          url: "entryies/:id",
+        .state("photoShow", {
+          url: "photos/:id",
           templateUrl: "js/photos/show.html",
-          controller: "PhotosShowController",
+          controller: "PhotoShowController",
           controllerAs: "showViewModel"
         })
     }

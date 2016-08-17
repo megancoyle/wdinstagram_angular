@@ -3,10 +3,9 @@
 (function(){
   angular
     .module("wdinstagram")
-    .controller("PhotosShowController", PhotosShowControllerFunction)
+    .controller("PhotoShowController", PhotoShowControllerFunction)
 
-  PhotosShowControllerFunction.$inject = ["$stateParams"]
-  function PhotosShowControllerFunction($stateParams) {
+  function PhotoShowControllerFunction($stateParams) {
     var showViewModel = this;
     showViewModel.photo = photos[$stateParams.id]
 

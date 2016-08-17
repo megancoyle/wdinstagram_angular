@@ -3,9 +3,9 @@
 (function(){
   angular
     .module("wdinstagram")
-    .controller("PhotosIndexController", PhotosIndexControllerFunction)
+    .controller("PhotoIndexController", PhotoIndexControllerFunction)
 
-  function PhotosIndexControllerFunction() {
+  function PhotoIndexControllerFunction() {
     var indexViewModel = this;
     indexViewModel.photos = photos;
     indexViewModel.newPhoto = {};

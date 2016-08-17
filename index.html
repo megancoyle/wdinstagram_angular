@@ -12,17 +12,20 @@
     {
     photo_url: "http://lorempixel.com/300/300/",
     author: "Timmy",
-    body: "Hey, see this reel cool pic I took!"
+    body: "Hey, see this reel cool pic I took!",
+    id: 1
     },
     {
     photo_url: "http://lorempixel.com/300/300/",
     author: "Becca",
-    body: "All the codes"
+    body: "All the codes",
+    id: 2
     },
     {
     photo_url: "http://lorempixel.com/300/300/",
     author: "Sandy",
-    body: "Evidence that I need to go on vacation soon"
+    body: "Evidence that I need to go on vacation soon",
+    id: 3
     }
     ]
     </script>
@@ -32,7 +35,7 @@
     <script src="js/photos/show.controller.js"></script>
   </head>
   <body data-ng-app="wdinstagram">
-    <h1>WDInstagram</h1>
+    <h1><a data-ui-sref="photoIndex">WDInstagram</a></h1>
     <main data-ui-view></main>
 
   </body>
