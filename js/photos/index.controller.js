@@ -2,21 +2,18 @@
 
 (function(){
   angular
-  .module("photos")
-  .controller("WdinstagramIndexController", [
-    WdinstagramIndexControllerFunction
-  ]);
+    .module("wdinstagram")
+    .controller("PhotosIndexController", PhotosIndexControllerFunction)
 
-  function WdinstagramIndexControllerFunction(){
-    this.photos = photos;
-    this.newPhoto = {};
-    this.create = function(){
-      photos.unshift(this.newPhoto);
-      this.newPhoto = {}
-    }
-    this.delete = function(id){
-      photos.splice(id, 1);
+  function PhotosIndexControllerFunction() {
+    var indexViewModel = this;
+    indexViewModel.photos = photos;
+    indexViewModel.newPhoto = {};
+
+    indexViewModel.create = function() {
+      photos.push(indexViewModel.newPhoto);
+      indexViewModel.newPhoto = {};
     }
   }
 
-}());
+})();

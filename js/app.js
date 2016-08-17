@@ -1,28 +1,29 @@
 "use strict";
 
 (function(){
-  angular.module("wdinstagram", [
-    "ui.router",
-    "photos"
-  ])
-  .config([
-    "$stateProvider",
-    RouterFunction
-  ]);
+  angular
+    .module("wdinstagram", [
+      "ui.router"
+    ])
+    .config([
+      "$stateProvider",
+      RouterFunc
+    ])
 
-  function RouterFunction($stateProvider){
-    $stateProvider
-    .state("wdinstagramIndex", {
-      url: "/photos",
-      templateUrl: "js/photos/index.html",
-      controller: "WdinstagramIndexController",
-      controllerAs: "WdinstagramIndexViewModel"
-    })
-    .state("wdinstagramShow", {
-      url: "/photos/:id",
-      templateUrl: "js/photos/show.html",
-      controller: "WdinstagramShowContoller",
-      controllerAs: "WdinstagramShowViewModel"
-    });
-  }
+    function RouterFunc($stateProvider) {
+      $stateProvider
+        .state("photosIndex", {
+          url: "/entries",
+          templateUrl: "js/photos/index.html",
+          controller: "PhotosIndexController",
+          controllerAs: "indexViewModel"
+        })
+        .state("entryShow", {
+          url: "entryies/:id",
+          templateUrl: "js/photos/show.html",
+          controller: "PhotosShowController",
+          controllerAs: "showViewModel"
+        })
+    }
+
 })();

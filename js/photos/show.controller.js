@@ -2,13 +2,21 @@
 
 (function(){
   angular
-  .module("photos")
-  .controller("WdinstagramShowController", [
-    "$stateParams",
-    WdinstagramShowControllerFunction
-  ]);
+    .module("wdinstagram")
+    .controller("PhotosShowController", PhotosShowControllerFunction)
 
-  function WdinstagramShowControllerFunction($stateParams){
-    this.photo = photos[$stateParams.id];
+  PhotosShowControllerFunction.$inject = ["$stateParams"]
+  function PhotosShowControllerFunction($stateParams) {
+    var showViewModel = this;
+    showViewModel.photo = photos[$stateParams.id]
+
+    showViewModel.update = function() {
+      photos[$stateParams.id] = showViewModel.photo;
+    };
+
+    showViewModel.delete = function() {
+      photos.splice( $stateParams.id, 1 );
+    }
   }
-}());
+
+})();

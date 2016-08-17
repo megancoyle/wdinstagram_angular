@@ -1,10 +1,17 @@
-<h2>Photo Index, ya'll</h2>
-<!-- <div>
-  <button data-ng-click="WdinstagramIndexViewModel.create()">Create</button>
-  <input data-ng-model="WdinstagramIndexViewModel.newPhoto.title" />
+<h2>Entries Index</h2>
+<p>
+  <form data-ng-submit="indexViewModel.create()">
+    <input placeholder="Author" data-ng-model="indexViewModel.newPhoto.author" />
+    <input placeholder="Body" data-ng-model="indexViewModel.newPhoto.body" />
+    <input placeholder="Photo Url" data-ng-model="indexViewModel.newPhoto.photo_url" />
+    <button type="submit">Create</button>
+  </form>
+</p>
+
+<div data-ng-repeat="photo in indexViewModel.photos">
+  <a data-ui-sref="photoShow({id: $index})">
+    <img data-ng-src="{{photo.photo_url}}">
+    <p>{{photo.author}}</p>
+    <p>{{photo.body}}</p>
+  </a>
 </div>
-<div data-ng-repeat="photo in WdinstagramIndexViewModel.photos">
-  <p>
-    <button data-ng-click="WdinstagramIndexViewModel.delete($index)">Delete</button>
-    <a data-ui-sref="photoShow({id: $index})">{{photo.author}}</a></p>
-  </div> -->
