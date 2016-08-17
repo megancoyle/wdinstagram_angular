@@ -11,9 +11,7 @@
     RouterFunction
   ]);
 
-  function RouterFunction($stateProvider,
-  $locationProvider){
-    $locationProvider.html5mode(true);
+  function RouterFunction($stateProvider){
     $stateProvider
     .state("wdinstagramIndex", {
       url: "/photos",
