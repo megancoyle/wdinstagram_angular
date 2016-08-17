@@ -23,7 +23,7 @@
         url: "entries/:id",
         templateUrl: "js/photos/show.html",
         controller: "EntryShowController",
-        controllerAs: "showVm"
+        controllerAs: "showViewModel"
       })
   }
 
